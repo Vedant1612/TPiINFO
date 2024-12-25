@@ -1,0 +1,35 @@
+/* App.css */
+
+/* Keyframes for scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move half of the total width */
+  }
+}
+
+/* Animate scrolling content */
+.animate-scroll {
+  animation: scroll 30s linear infinite; /* Adjusted duration */
+  display: flex;
+  gap: 2rem;
+  width: max-content; 
+}
+
+/* Wrapper for the testimonials to hide overflow */
+.testimonials-wrapper {
+  overflow-x: hidden;
+  width: 100vw; 
+}
+
+.testimonials-wrapper .animate-scroll {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Optional: Adjust gap and padding for better aesthetics */
+.testimonials-wrapper .animate-scroll > div {
+  padding: 2rem;
+}
