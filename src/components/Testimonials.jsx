@@ -78,29 +78,32 @@ export default function Testimonials() {
             animationPlayState: isHovered ? 'paused' : 'running', // Control animation on hover
           }}
         >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex-none w-72 text-center"
-            >
-              <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden shadow-md mx-auto">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-full h-full object-cover"
-                />
+          {/* Testimonials Grid */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex-none w-72 sm:w-80 md:w-96 text-center"
+              >
+                <div className="w-16 h-16 bg-gray-200 rounded-full overflow-hidden shadow-md mx-auto">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h2 className="text-lg font-semibold text-indigo-600">
+                    {testimonial.name}
+                  </h2>
+                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                </div>
+                <p className="text-gray-600 mt-4 text-sm leading-relaxed">
+                  {testimonial.feedback}
+                </p>
               </div>
-              <div className="mt-4">
-                <h2 className="text-lg font-semibold text-indigo-600">
-                  {testimonial.name}
-                </h2>
-                <p className="text-sm text-gray-500">{testimonial.role}</p>
-              </div>
-              <p className="text-gray-600 mt-4 text-sm leading-relaxed">
-                {testimonial.feedback}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

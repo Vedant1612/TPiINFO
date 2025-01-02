@@ -44,7 +44,7 @@ export default function Boost() {
   return (
     <div id="boost" className="flex flex-col py-10 items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
       {/* Header Section */}
-      <div className="text-center max-w-3xl mb-12">
+      <div className="text-center max-w-3xl mb-12 px-5">
         <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
           Our Services
         </h1>
@@ -104,9 +104,9 @@ export default function Boost() {
       {/* Detail Modal */}
       {selectedCard && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg p-8 w-[75%] h-[75%] overflow-auto transform transition-all duration-500 ease-in-out scale-110 opacity-100">
+          <div className="bg-white rounded-lg p-8 w-[90%] md:w-[75%] h-[75%] overflow-auto transform transition-all duration-500 ease-in-out scale-110 opacity-100">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              {/* {selectedCard.title} */}
+              {selectedCard.title}
             </h2>
             {/* Render the correct component based on selectedCard */}
             {selectedCard.detailsComponent}

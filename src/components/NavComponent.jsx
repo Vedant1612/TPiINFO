@@ -47,17 +47,17 @@ export default function NavComponent() {
         <div className="sm:hidden">
           <button
             onClick={() => setModalOpen(!isModalOpen)}
-            className="flex items-center space-x-2"
+            className="flex flex-col items-center justify-between w-8 h-6"
             aria-label="Toggle Menu"
           >
-            <div className="w-6 h-0.5 bg-gray-800 transition-all duration-300" />
-            <div className="w-6 h-0.5 bg-gray-800 transition-all duration-300" />
-            <div className="w-6 h-0.5 bg-gray-800 transition-all duration-300" />
+            <div className="w-full h-0.5 bg-gray-800 transition-all duration-300" />
+            <div className="w-full h-0.5 bg-gray-800 transition-all duration-300" />
+            <div className="w-full h-0.5 bg-gray-800 transition-all duration-300" />
           </button>
         </div>
 
         {/* Stylish Motivational Text */}
-        <div className="text-right">
+        <div className="text-right hidden sm:block">
           <span
             className="block text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-text font-cursive"
           >
@@ -73,8 +73,18 @@ export default function NavComponent() {
       {isModalOpen && (
         <div
           ref={ref}
-          className="absolute top-16 left-0 right-0 bg-white shadow-lg rounded-lg p-6 sm:hidden transition-all duration-300"
+          className="absolute top-0 left-0 right-0 bg-white shadow-lg rounded-lg p-6 sm:hidden transition-all duration-300 transform"
         >
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="font-jostBold text-4xl text-[#3E3FD8]">TPiINFO</h1>
+            <button
+              onClick={() => setModalOpen(false)}
+              className="text-gray-800 hover:text-[#3E3FD8]"
+              aria-label="Close Menu"
+            >
+              <span className="font-bold text-2xl">&times;</span>
+            </button>
+          </div>
           {navData.map((n, index) => (
             <button
               key={index}
