@@ -34,7 +34,7 @@ export default function App() {
               {[
                 { img: '/Group14.png', title: 'Streamlined Operations', desc: 'Leverage cutting-edge tools to automate processes and boost productivity.' },
                 { img: '/Group15.png', title: 'Timely Notifications', desc: 'Stay on top of critical updates with intelligent reminder systems.' },
-                { img: '/Group16.png', title: 'Tailored E-Commerce', desc: 'Build custom solutions to enhance your online presence and sales.' },
+                { img: '/Group16.png', title: 'Tailored Solutions', desc: 'Build custom solutions to enhance your online presence and sales.' },
               ].map((item, index) => (
                 <div className="flex" key={index}>
                   <div>
