@@ -9,7 +9,7 @@ export default function Header() {
     navigate(Boost);
   };
   return (
-    <div className="flex pt-24  xl:pt-0 justify-around min-h-screen items-center flex-wrap overflow-hidden px-5">
+    <div id="header" className="flex pt-24  xl:pt-0 justify-around min-h-screen items-center flex-wrap overflow-hidden px-5">
       <div className="max-w-xl ">
         <h1 className="font-jostBold text-[58px] leading-[50px] sm:text-7xl">
         Empowering Businesses with Tech Solutions.

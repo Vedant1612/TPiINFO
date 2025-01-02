@@ -23,7 +23,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-r from-indigo-100 via-blue-50 to-indigo-100">
+    <div id="contact" className="py-16 bg-gradient-to-r from-indigo-100 via-blue-50 to-indigo-100">
       <div className="max-w-screen-sm mx-auto px-6">
         <div className="flex flex-col items-center bg-white shadow-xl rounded-lg p-8 sm:p-12">
           <h2 className="text-indigo-600 font-extrabold text-3xl sm:text-4xl text-center mb-6">

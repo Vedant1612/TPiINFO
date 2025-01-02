@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react';
 import useOnClickOutside from './useOnClickOutside';
 
 const navData = [
-  { name: 'Home', href: '#home' },
-  { name: 'Work', href: '#work' },
-  { name: 'Testimonials', href: '#Testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', sectionId: 'header' },
+  { name: 'Work', sectionId: 'boost' },
+  { name: 'Testimonials', sectionId: 'testimonials' },
+  { name: 'Contact', sectionId: 'contact' },
 ];
 
 export default function NavComponent() {
@@ -13,6 +13,14 @@ export default function NavComponent() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   useOnClickOutside(ref, () => setModalOpen(false));
+
+  const handleScroll = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setModalOpen(false); // Close the mobile menu after navigation
+    }
+  };
 
   return (
     <div className="sticky top-0 z-50 w-full py-3 text-xl font-bold drop-shadow-xl flex-none transition-colors duration-500 bg-transparent backdrop-blur-md">
@@ -25,13 +33,13 @@ export default function NavComponent() {
         {/* Desktop Navigation */}
         <div className="sm:flex justify-between items-center hidden space-x-6">
           {navData.map((n, index) => (
-            <a
+            <button
               key={index}
-              href={n.href}
-              className="text-xl text-gray-700 hover:text-[#3E3FD8] transition-colors duration-300"
+              onClick={() => handleScroll(n.sectionId)}
+              className="text-xl text-gray-700 hover:text-[#3E3FD8] transition-colors duration-300 focus:outline-none"
             >
               {n.name}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -48,14 +56,16 @@ export default function NavComponent() {
           </button>
         </div>
 
-        {/* Sign Up Button */}
-        <div>
-          <button className="relative z-0 rounded-full bg-blue-500 px-10 py-3 text-white font-semibold transition-all ease-in-out duration-300 group">
-            {/* After pseudo-element for hover effect */}
-            <span className="absolute left-0 top-0 -z-10 h-full w-0 rounded-full bg-blue-700 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0 group-hover:rounded-full" />
-            {/* Button Text */}
-            Sign Up
-          </button>
+        {/* Stylish Motivational Text */}
+        <div className="text-right">
+          <span
+            className="block text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-text font-cursive"
+          >
+            Empowering Solutions
+          </span>
+          <span className="block text-lg font-semibold text-gray-500 italic">
+            Building the Future
+          </span>
         </div>
       </div>
 
@@ -66,13 +76,13 @@ export default function NavComponent() {
           className="absolute top-16 left-0 right-0 bg-white shadow-lg rounded-lg p-6 sm:hidden transition-all duration-300"
         >
           {navData.map((n, index) => (
-            <a
+            <button
               key={index}
-              href={n.href}
-              className="block text-xl font-medium text-gray-700 hover:text-[#3E3FD8] py-3"
+              onClick={() => handleScroll(n.sectionId)}
+              className="block text-xl font-medium text-gray-700 hover:text-[#3E3FD8] py-3 focus:outline-none"
             >
               {n.name}
-            </a>
+            </button>
           ))}
         </div>
       )}

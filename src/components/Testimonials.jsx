@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 
 export default function Testimonials() {
+  const [isHovered, setIsHovered] = useState(false); // Track hover state
+
   const testimonials = [
     {
       name: 'Alice Johnson',
@@ -54,7 +56,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div id="testimonials" className="py-16 bg-gray-50">
       <div className="text-center mb-14">
         <h3 className="text-2xl font-semibold text-indigo-600 tracking-widest uppercase">
           Testimonials
@@ -65,8 +67,17 @@ export default function Testimonials() {
       </div>
 
       {/* Scrollable container with animation */}
-      <div className="testimonials-wrapper">
-        <div className="animate-scroll">
+      <div
+        className="testimonials-wrapper"
+        onMouseEnter={() => setIsHovered(true)} // Pause animation on hover
+        onMouseLeave={() => setIsHovered(false)} // Resume animation on mouse leave
+      >
+        <div
+          className="animate-scroll"
+          style={{
+            animationPlayState: isHovered ? 'paused' : 'running', // Control animation on hover
+          }}
+        >
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
