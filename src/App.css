@@ -1,3 +1,6 @@
+/* Load from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 /* App.css */
 html, body {
   margin: 0;
@@ -65,19 +68,30 @@ body {
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { 
+    background-position: 0% 50%; 
+    background-color: #FF7F50; /* Coral */
+  }
+  50% { 
+    background-position: 100% 50%; 
+    background-color: #4CAF50; /* Green */
+  }
+  100% { 
+    background-position: 0% 50%; 
+    background-color: #3F51B5; /* Indigo */
+  }
 }
 
 .animate-gradient-text {
-  background-size: 200% 200%;
-  animation: gradient-shift 5s infinite;
+  background: linear-gradient(45deg, #FF7F50, #4CAF50, #3F51B5, #FFC107, #9C27B0);
+  background-size: 400% 400%;
+  animation: gradient-shift 10s ease infinite;
+  -webkit-background-clip: text; /* Vendor prefix */
+  background-clip: text; /* Standard property for compatibility */
+  color: transparent;
 }
+
 
 .font-cursive {
   font-family: 'Dancing Script', cursive;
 }
-
-/* Load from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');

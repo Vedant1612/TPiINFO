@@ -106,7 +106,7 @@ export default function Boost() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg p-8 w-[90%] md:w-[75%] h-[75%] overflow-auto transform transition-all duration-500 ease-in-out scale-110 opacity-100">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              {selectedCard.title}
+              {/* {selectedCard.title} */}
             </h2>
             {/* Render the correct component based on selectedCard */}
             {selectedCard.detailsComponent}
